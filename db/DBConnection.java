@@ -18,6 +18,7 @@ public interface DBConnection {
      * Insert the visited restaurants for a user.
      * @param userId
      * @param businessIds
+     * @return 
      */
     public void setVisitedRestaurants(String userId, List<String> businessIds);
 

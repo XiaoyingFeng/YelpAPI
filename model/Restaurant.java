@@ -82,21 +82,24 @@ public class Restaurant {
 	      	 }
 	       }
 	       // do not automatically generate this constructor
-	       public Restaurant(String businessId, String name, String categories,
-	      		 String city, String state, double stars, String fullAddress,
-	      		 double latitude, double longitude, String imageUrl, String url) {
-	      	 this.businessId = businessId;
-	      	 this.categories = categories;
-	      	 this.name = name;
-	      	 this.city = city;
-	      	 this.state = state;
-	      	 this.stars = stars;
-	      	 this.fullAddress = fullAddress;
-	      	 this.latitude = latitude;
-	      	 this.longitude = longitude;
-	      	 this.imageUrl = imageUrl;
-	      	 this.url = url;
-	       }
+
+public Restaurant(String businessId, String name, String categories,
+   		 String city, String state, double stars, String fullAddress, 
+   		 double latitude, double longitude, String imageUrl, String url) {
+   
+   	 this.businessId = businessId;
+   	 this.name = name;
+   	 this.categories = categories;
+   	 this.city = city;
+   	 this.state = state;
+   	 this.fullAddress = fullAddress;
+   	 this.stars = stars;
+   	 this.latitude = latitude;
+   	 this.longitude = longitude;
+   	 this.imageUrl = imageUrl;
+   	 this.url = url;
+    }
+
 	       
 	       public JSONObject toJSONObject() {
 	      	 JSONObject obj = new JSONObject();
