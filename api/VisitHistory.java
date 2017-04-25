@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,7 +73,12 @@ public class VisitHistory extends HttpServlet {
 				throws ServletException, IOException {
 			try {
 				
-				
+				// allow access only if session exists
+				HttpSession session = request.getSession();
+				if (session.getAttribute("user") == null) {
+					response.setStatus(403);
+					return;
+				}
 				JSONObject input = RpcParser.parseInput(request);
 				if (input.has("user_id") && input.has("visited")) {
 					String userId = (String) input.get("user_id");
